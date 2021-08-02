@@ -40,7 +40,7 @@ function App() {
   }, [isActive, seconds]);
 
   const checkChar = (e) => {
-    let charWritten = e.target.value;
+    let charWritten = e.target.value.toLowerCase();
     if (name === "" && charWritten === "a") {
       setName(charWritten);
       setIsEditing(true);
