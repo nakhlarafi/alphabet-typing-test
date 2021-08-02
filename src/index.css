@@ -99,6 +99,7 @@ p {
 
 h3.timer {
   margin: 20px;
+  padding: 10px;
   text-align: center;
 }
 @media screen and (min-width: 800px) {
