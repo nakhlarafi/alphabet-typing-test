@@ -12,6 +12,7 @@ function App() {
     setName("");
     setIsEditing(false);
     reset();
+    setCharNext("a");
   };
 
   // New
@@ -166,7 +167,7 @@ function App() {
             onChange={(e) => checkChar(e)}
           />
           <button type="submit" className="submit-btn">
-            {isEditing ? "edit" : "submit"}
+            Reset
           </button>
         </div>
 
