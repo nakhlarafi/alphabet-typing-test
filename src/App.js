@@ -33,7 +33,7 @@ function App() {
     if (isActive) {
       interval = setInterval(() => {
         setSeconds((second) => second + 1);
-      }, 1);
+      }, 10);
     } else if (!isActive && seconds !== 0) {
       clearInterval(interval);
     }
@@ -172,7 +172,11 @@ function App() {
         </div>
 
         <div className="app">
-          <h3 className="timer">{seconds / 100}s</h3>
+          <h3 className="timer">
+            {("0" + (Math.floor(seconds / 6000) % 60)).slice(-2)}:
+            {("0" + (Math.floor(seconds / 100) % 60)).slice(-2)}:
+            {("0" + ((seconds / 1) % 1000)).slice(-2)}s
+          </h3>
         </div>
       </form>
     </section>
