@@ -32,13 +32,13 @@ function App() {
     let interval = null;
     if (isActive) {
       interval = setInterval(() => {
-        setSeconds((second) => second + 1);
+        setSeconds((second) => second + 10);
       }, 10);
     } else if (!isActive && seconds !== 0) {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [isActive, seconds]);
+  }, [isActive]);
 
   const checkChar = (e) => {
     let charWritten = e.target.value.toLowerCase();
@@ -173,9 +173,9 @@ function App() {
 
         <div className="app">
           <h3 className="timer">
-            {("0" + (Math.floor(seconds / 6000) % 60)).slice(-2)}:
-            {("0" + (Math.floor(seconds / 100) % 60)).slice(-2)}:
-            {("0" + ((seconds / 1) % 1000)).slice(-2)}s
+            {("0" + (Math.floor(seconds / 60000) % 60)).slice(-2)}:
+            {("0" + (Math.floor(seconds / 1000) % 60)).slice(-2)}:
+            {("0" + ((seconds / 10) % 100)).slice(-2)}s
           </h3>
         </div>
       </form>
