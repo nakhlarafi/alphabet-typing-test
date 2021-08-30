@@ -160,7 +160,7 @@ function App() {
           <input
             type="text"
             className="grocery"
-            placeholder="e.g. eggs"
+            placeholder="type the alphabets here"
             value={name}
             onChange={(e) => checkChar(e)}
           />
